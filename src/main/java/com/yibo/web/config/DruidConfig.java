@@ -5,10 +5,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.PropertySource;
 
 import javax.sql.DataSource;
 
 @Configuration
+@PropertySource("classpath:jdbc.properties")
 public class DruidConfig {
     @Value("${datasource.driver-class-name}")
     private String driverClassName;
