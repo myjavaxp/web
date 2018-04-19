@@ -10,7 +10,6 @@ import org.springframework.context.annotation.PropertySource;
 import javax.sql.DataSource;
 
 @Configuration
-@PropertySource("classpath:jdbc.properties")
 public class DruidConfig {
     @Value("${datasource.driver-class-name}")
     private String driverClassName;
