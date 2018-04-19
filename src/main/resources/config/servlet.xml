@@ -8,16 +8,7 @@
     <mvc:default-servlet-handler/>
     <mvc:annotation-driven>
         <mvc:message-converters>
-            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
-                <property name="supportedMediaTypes">
-                    <list>
-                        <value>text/html;charset=UTF-8</value>
-                        <value>application/json</value>
-                        <value>application/xml;charset=UTF-8</value>
-                    </list>
-                </property>
-                <property name="fastJsonConfig" ref="fastJsonConfig"/>
-            </bean>
+            <ref bean="fastJsonHttpMessageConverter"/>
         </mvc:message-converters>
     </mvc:annotation-driven>
 </beans>
