@@ -24,35 +24,41 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.yibo.web.entity" targetProject="./src/main/java/">
+        <javaModelGenerator targetPackage="com.yibo.web.entity" targetProject=".">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.yibo.web.mapper" targetProject="./src/main/java/">
+        <sqlMapGenerator targetPackage="mapper" targetProject=".">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator targetPackage="com.yibo.web.dao" type="XMLMAPPER" targetProject="./src/main/java/">
+        <javaClientGenerator targetPackage="com.yibo.web.dao" type="XMLMAPPER" targetProject=".">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <table mapperName="DeptDao" domainObjectName="Dept" tableName="dept_inf" enableCountByExample="false"
+        <table schema="hrm_db" mapperName="DeptDao" domainObjectName="Dept" tableName="dept_inf"
+               enableCountByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
-        <table mapperName="DocumentDao" domainObjectName="Document" tableName="document_inf"
-               enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="false"/>
-        <table mapperName="JobDao" domainObjectName="Job" tableName="job_inf" enableCountByExample="false"
+        <table schema="hrm_db" mapperName="DocumentDao" domainObjectName="Document" tableName="document_inf"
+               enableCountByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
-        <table mapperName="UserDao" domainObjectName="User" tableName="user_inf" enableCountByExample="false"
+        <table schema="hrm_db" mapperName="JobDao" domainObjectName="Job" tableName="job_inf"
+               enableCountByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
-        <table mapperName="EmployeeDao" domainObjectName="Employee" tableName="employee_inf"
-               enableCountByExample="false" enableDeleteByExample="false"
+        <table schema="hrm_db" mapperName="UserDao" domainObjectName="User" tableName="user_inf"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
-        <table mapperName="NoticeDao" domainObjectName="Notice" tableName="Notice_inf" enableCountByExample="false"
+        <table schema="hrm_db" mapperName="EmployeeDao" domainObjectName="Employee" tableName="employee_inf"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table schema="hrm_db" mapperName="NoticeDao" domainObjectName="Notice" tableName="notice_inf"
+               enableCountByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false" enableUpdateByExample="false"/>
     </context>
