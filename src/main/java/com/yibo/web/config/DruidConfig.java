@@ -42,8 +42,8 @@ public class DruidConfig {
     private boolean testOnReturn;
 
     @Primary
-    @Bean
-    public DataSource dataSource() {
+    @Bean(initMethod = "init")
+    public DruidDataSource dataSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName(driverClassName);
         dataSource.setUrl(url);
