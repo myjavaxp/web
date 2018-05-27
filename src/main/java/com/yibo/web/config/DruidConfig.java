@@ -7,8 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 
-import javax.sql.DataSource;
-
 @Configuration
 @PropertySource("classpath:jdbc.properties")
 public class DruidConfig {
@@ -42,7 +40,7 @@ public class DruidConfig {
     private boolean testOnReturn;
 
     @Primary
-    @Bean(initMethod = "init")
+    @Bean(initMethod = "init", destroyMethod = "close")
     public DruidDataSource dataSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setDriverClassName(driverClassName);
