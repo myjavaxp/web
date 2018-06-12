@@ -42,7 +42,8 @@ public class ServletConfig implements WebMvcConfigurer {
         fastJsonConfig.setSerializerFeatures(
                 SerializerFeature.PrettyFormat,
                 SerializerFeature.WriteDateUseDateFormat,
-                SerializerFeature.WriteNullStringAsEmpty);
+                SerializerFeature.WriteNullStringAsEmpty,
+                SerializerFeature.WriteMapNullValue);
         fastJsonHttpMessageConverter.setFastJsonConfig(fastJsonConfig);
         List<MediaType> mediaTypeList = new ArrayList<>();
         mediaTypeList.add(MediaType.APPLICATION_JSON);
