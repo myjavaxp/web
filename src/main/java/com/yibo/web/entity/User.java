@@ -6,13 +6,13 @@ import java.util.Date;
 public class User implements Serializable {
     private Integer id;
 
-    private String loginname;
+    private String loginName;
 
     private String password;
 
     private Integer status;
 
-    private Date createdate;
+    private Date createDate;
 
     private String username;
 
@@ -26,12 +26,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getLoginname() {
-        return loginname;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setLoginname(String loginname) {
-        this.loginname = loginname == null ? null : loginname.trim();
+    public void setLoginName(String loginName) {
+        this.loginName = loginName == null ? null : loginName.trim();
     }
 
     public String getPassword() {
@@ -50,12 +50,12 @@ public class User implements Serializable {
         this.status = status;
     }
 
-    public Date getCreatedate() {
-        return createdate;
+    public Date getCreateDate() {
+        return createDate;
     }
 
-    public void setCreatedate(Date createdate) {
-        this.createdate = createdate;
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
     public String getUsername() {
@@ -73,10 +73,10 @@ public class User implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", loginname=").append(loginname);
+        sb.append(", loginName=").append(loginName);
         sb.append(", password=").append(password);
         sb.append(", status=").append(status);
-        sb.append(", createdate=").append(createdate);
+        sb.append(", createDate=").append(createDate);
         sb.append(", username=").append(username);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
