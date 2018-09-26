@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,8 +18,8 @@ public class HelloController {
     }
 
     @GetMapping("/{name}")
-    public Map<String, String> hi(@PathVariable String name) throws UnsupportedEncodingException {
-        String string = new String(name.getBytes("ISO-8859-1"), "UTF-8");
+    public Map<String, String> hi(@PathVariable String name) {
+        String string = new String(name.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         System.out.println(string);
         Map<String, String> map = new HashMap<>();
         map.put("name", string);
