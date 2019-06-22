@@ -8,32 +8,19 @@ import com.yibo.web.ansi.AnsiElement;
 import com.yibo.web.ansi.AnsiOutput;
 import com.yibo.web.ansi.AnsiStyle;
 
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 
 public class ColorConverter extends CompositeConverter<ILoggingEvent> {
     private static final Map<String, AnsiElement> ELEMENTS;
 
     static {
-        Map<String, AnsiElement> ansiElements = new HashMap<>();
-        ansiElements.put("faint", AnsiStyle.FAINT);
-        ansiElements.put("red", AnsiColor.RED);
-        ansiElements.put("green", AnsiColor.GREEN);
-        ansiElements.put("yellow", AnsiColor.YELLOW);
-        ansiElements.put("blue", AnsiColor.BLUE);
-        ansiElements.put("magenta", AnsiColor.MAGENTA);
-        ansiElements.put("cyan", AnsiColor.CYAN);
-        ELEMENTS = Collections.unmodifiableMap(ansiElements);
+        ELEMENTS = Map.of("faint", AnsiStyle.FAINT, "red", AnsiColor.RED, "green", AnsiColor.GREEN, "yellow", AnsiColor.YELLOW, "blue", AnsiColor.BLUE, "magenta", AnsiColor.MAGENTA, "cyan", AnsiColor.CYAN);
     }
 
     private static final Map<Integer, AnsiElement> LEVELS;
 
     static {
-        Map<Integer, AnsiElement> ansiLevels = new HashMap<>();
-        ansiLevels.put(Level.ERROR_INTEGER, AnsiColor.RED);
-        ansiLevels.put(Level.WARN_INTEGER, AnsiColor.YELLOW);
-        LEVELS = Collections.unmodifiableMap(ansiLevels);
+        LEVELS = Map.of(Level.ERROR_INTEGER, AnsiColor.RED, Level.WARN_INTEGER, AnsiColor.YELLOW);
     }
 
     @Override
@@ -47,7 +34,7 @@ public class ColorConverter extends CompositeConverter<ILoggingEvent> {
         return toAnsiString(in, element);
     }
 
-    protected String toAnsiString(String in, AnsiElement element) {
+    private String toAnsiString(String in, AnsiElement element) {
         return AnsiOutput.toString(element, in);
     }
 }
