@@ -7,6 +7,8 @@ import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
 
+import java.util.Objects;
+
 @Configuration
 public class QuartzConfig {
     @Bean
@@ -28,7 +30,7 @@ public class QuartzConfig {
     @Bean
     public SimpleTriggerFactoryBean employeeTrigger(MethodInvokingJobDetailFactoryBean employeeJobDetail) {
         SimpleTriggerFactoryBean simpleTriggerFactoryBean = new SimpleTriggerFactoryBean();
-        simpleTriggerFactoryBean.setJobDetail(employeeJobDetail.getObject());
+        simpleTriggerFactoryBean.setJobDetail(Objects.requireNonNull(employeeJobDetail.getObject()));
         simpleTriggerFactoryBean.setStartDelay(10000L);
         simpleTriggerFactoryBean.setRepeatInterval(10000L);
         return simpleTriggerFactoryBean;
